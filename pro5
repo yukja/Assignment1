@@ -1,0 +1,44 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+       
+        Random random = new Random();
+        int targetNumber = random.Next(1, 101);
+
+        int attempts = 0;
+        int guess = 0;
+
+        Console.WriteLine("Welcome to the Guessing Game!");
+        Console.WriteLine("Try to guess the number between 1 and 100.");
+
+        while (guess != targetNumber)
+        {
+            Console.Write("Enter your guess: ");
+
+            if (int.TryParse(Console.ReadLine(), out guess))
+            {
+                attempts++;
+
+                if (guess < targetNumber)
+                {
+                    Console.WriteLine("Too low");
+                }
+                else if (guess > targetNumber)
+                {
+                    Console.WriteLine("Too high");
+                }
+                else
+                {
+                    Console.WriteLine($"Congratulations! You correctly guessed the number {targetNumber} in {attempts} attempts!");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Invalid input. Please enter a valid number.");
+            }
+        }
+    }
+}
