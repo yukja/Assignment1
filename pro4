@@ -1,0 +1,17 @@
+using System;
+
+class Program
+{
+    static void GreetUser(string name)
+    {
+        Console.WriteLine($"Greetings, {name}!");
+    }
+
+    static void Main()
+    {
+        // Call the GreetUser function with different names
+        GreetUser("jatin patti");
+        GreetUser("college");
+        GreetUser("pures");
+    }
+}
